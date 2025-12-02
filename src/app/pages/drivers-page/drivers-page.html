@@ -1,0 +1,20 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>Parrilla Oficial 2024</h1>
+  </header>
+  
+  <!-- Spinner de carga simple -->
+  <div *ngIf="loading" class="loading">
+    🏎️ Recuperando telemetría de la FIA...
+  </div>
+
+  <!-- Grid de tarjetas -->
+  <div class="grid" *ngIf="!loading">
+    <app-driver-card 
+      *ngFor="let driver of drivers$ | async"
+      [driver]="driver"
+      (liked)="toggleLike(driver.id)"
+      (deleted)="deleteDriver(driver.id)">
+    </app-driver-card>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="nav-content">
+    <div class="brand">
+      <span class="f1-logo">F1</span> PULSE
+    </div>
+    
+    <div class="links">
+      <!-- routerLinkActive son los encales de las diferentes paginas -->
+      <a routerLink="/drivers" routerLinkActive="active">Pilotos</a>
+      <a routerLink="/teams" routerLinkActive="active">Escuderías</a>
+      <a routerLink="/contact" routerLinkActive="active" class="btn-cta">
+        Registro
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Aquí se cargarán las páginas dinámicamente -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

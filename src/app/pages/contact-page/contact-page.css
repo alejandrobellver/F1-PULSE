@@ -1,0 +1,78 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 450px;
+  background: #1e1e24;
+  padding: 30px;
+  border-radius: 12px;
+  border-top: 5px solid #e10600;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1 { margin-top: 0; text-align: center; }
+p { color: #888; text-align: center; margin-bottom: 20px; }
+
+.field { margin-bottom: 20px; }
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  background: #2b2b36;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #e10600;
+}
+
+.error-border { border-color: #ff4444; }
+.error-msg { color: #ff4444; font-size: 0.8rem; margin-top: 5px; display: block; }
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #e10600;
+  color: white;
+  border: none;
+  font-weight: 800;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.success-msg {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}

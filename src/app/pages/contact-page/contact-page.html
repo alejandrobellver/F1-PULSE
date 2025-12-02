@@ -1,0 +1,51 @@
+<div class="page-container">
+  <div class="form-card">
+    <h1>Registro de Piloto</h1>
+    <p>Solicita tu superlicencia de la FIA</p>
+    
+    <form [formGroup]="form" (ngSubmit)="send()">
+      <!-- Campo Nombre -->
+      <div class="field">
+        <label>Nombre Completo</label>
+        <input 
+          type="text" 
+          formControlName="name" 
+          placeholder="Ej: Ayrton Senna"
+          [class.error-border]="isInvalid('name')">
+        <span class="error-msg" *ngIf="isInvalid('name')">
+          El nombre es obligatorio (mínimo 3 letras)
+        </span>
+      </div>
+
+      <!-- Campo Equipo -->
+      <div class="field">
+        <label>Escudería</label>
+        <select formControlName="team" [class.error-border]="isInvalid('team')">
+          <option value="">Selecciona un equipo...</option>
+          <option *ngFor="let t of teams" [value]="t.name">{{ t.name }}</option>
+        </select>
+        <span class="error-msg" *ngIf="isInvalid('team')">
+          Debes seleccionar un equipo
+        </span>
+      </div>
+
+      <!-- Campo Email -->
+      <div class="field">
+        <label>Email de Contacto</label>
+        <input 
+          type="email" 
+          formControlName="email" 
+          placeholder="piloto@f1.com"
+          [class.error-border]="isInvalid('email')">
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">
+        ENVIAR SOLICITUD
+      </button>
+
+      <div class="success-msg" *ngIf="submitted">
+        ✅ ¡Piloto registrado correctamente!
+      </div>
+    </form>
+  </div>
+</div>

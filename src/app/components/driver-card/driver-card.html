@@ -1,0 +1,42 @@
+<article class="card">
+  <!-- Cabecera con número y botón de Like -->
+  <div class="card-top">
+    <span class="number">#{{ driver.number }}</span>
+    <button 
+      class="btn-like" 
+      [class.liked]="driver.liked" 
+      (click)="onLike()"
+      title="Dar Like">
+      {{ driver.liked ? '❤️' : '🤍' }}
+    </button>
+  </div>
+
+  <!-- Imagen del Piloto -->
+  <div class="avatar-box">
+    <!-- Si falla la imagen de la API, usamos un placeholder o aseguramos que venga bien del servicio -->
+    <img [src]="driver.image" [alt]="driver.name">
+  </div>
+
+  <!-- Información -->
+  <div class="info">
+    <h3>{{ driver.name }}</h3>
+    
+    <!-- Badge del equipo con color dinámico -->
+    <span 
+      class="team-badge" 
+      [style.border-color]="getTeamColor(driver.team)"
+      [style.color]="getTeamColor(driver.team)">
+      {{ driver.team }}
+    </span>
+
+    <div class="stats">
+      <small>{{ driver.country }}</small>
+      <strong class="points">{{ driver.points }} PTS</strong>
+    </div>
+  </div>
+
+  <!-- Botón de Borrar (Solo localmente) -->
+  <button class="btn-delete" (click)="onDelete()">
+    ELIMINAR
+  </button>
+</article>

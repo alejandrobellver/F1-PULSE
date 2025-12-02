@@ -1,0 +1,13 @@
+<div class="page-container">
+  <header><h1>Campeonato de Constructores</h1></header>
+  
+  <div class="team-list">
+    <div class="team-row" *ngFor="let team of teams" [style.border-left-color]="team.color">
+      <h2>{{ team.name }}</h2>
+      <div class="details">
+        <p><strong>Team Principal:</strong> {{ team.principal }}</p>
+        <small>Base: {{ team.base }}</small>
+      </div>
+    </div>
+  </div>
+</div>
