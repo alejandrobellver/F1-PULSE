@@ -1,20 +1,18 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { F1Service } from '../../services/f1';
-// Importamos la tarjeta que creamos en el paso anterior
 import { DriverCard } from '../../components/driver-card/driver-card';
 
 @Component({
   selector: 'app-drivers-page',
   standalone: true,
-  // IMPORTANTE: Importar CommonModule (para *ngFor) y el componente hijo
   imports: [CommonModule, DriverCard],
   templateUrl: './drivers-page.html',
   styleUrls: ['./drivers-page.css']
 })
-export class DriversPage implements OnInit { // Sin "Component" en el nombre de la clase
+export class DriversPage implements OnInit {
   private service = inject(F1Service);
-  
+
   // Exponemos el Observable de pilotos para usarlo en el HTML con el pipe | async
   drivers$ = this.service.drivers$;
   loading = true;

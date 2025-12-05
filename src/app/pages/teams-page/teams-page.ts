@@ -9,7 +9,7 @@ import { F1Service } from '../../services/f1';
   templateUrl: './teams-page.html',
   styleUrls: ['./teams-page.css']
 })
-export class TeamsPage { // Sin "Component"
+export class TeamsPage {
   private service = inject(F1Service);
   // Obtenemos la lista estática
   teams = this.service.getTeams();

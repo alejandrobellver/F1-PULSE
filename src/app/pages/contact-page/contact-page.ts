@@ -10,10 +10,10 @@ import { F1Service } from '../../services/f1';
   templateUrl: './contact-page.html',
   styleUrls: ['./contact-page.css']
 })
-export class ContactPage { // Sin "Component"
+export class ContactPage {
   private fb = inject(FormBuilder);
   private service = inject(F1Service);
-  
+
   teams = this.service.getTeams();
   submitted = false;
 
@@ -33,7 +33,7 @@ export class ContactPage { // Sin "Component"
   send() {
     if (this.form.valid) {
       const val = this.form.value;
-      // Simulamos añadir piloto
+      // Añadir piloto
       this.service.addDriver({
         name: val.name,
         team: val.team,
